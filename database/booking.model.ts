@@ -46,8 +46,6 @@ const bookingSchema = new Schema<BookingDoc>(
   { timestamps: true },
 );
 
-bookingSchema.index({ eventId: 1 });
-
 bookingSchema.pre('save', async function preSave(next) {
   try {
     // Validate the referenced Event exists before allowing a booking.
